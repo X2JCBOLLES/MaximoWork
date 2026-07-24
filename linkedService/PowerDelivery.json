@@ -1,0 +1,43 @@
+{
+	"name": "PowerDelivery",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"server": {
+				"type": "string",
+				"defaultValue": "gaxgpor252vd.southernco.com:3201/dnhtrpv1"
+			},
+			"username": {
+				"type": "string",
+				"defaultValue": "privuser"
+			},
+			"secretname": {
+				"type": "string",
+				"defaultValue": "pdp6lakehouseinq"
+			}
+		},
+		"annotations": [],
+		"type": "Oracle",
+		"version": "2.0",
+		"typeProperties": {
+			"server": "@{linkedService().server}",
+			"authenticationType": "Basic",
+			"username": "@{linkedService().username}",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "p6lakekv",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"baseUrl": "https://sc-p6lake-dv-kv.vault.azure.net/"
+					}
+				},
+				"secretName": "pdp6lakehouseinq"
+			}
+		},
+		"connectVia": {
+			"referenceName": "socoshir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

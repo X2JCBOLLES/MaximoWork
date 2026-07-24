@@ -1,0 +1,13 @@
+{
+	"name": "socoshir",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "southern on-premises self-hosted integration runtime",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/0fd4f3c1-029e-4fc8-878d-eabb2bd1c238/resourcegroups/sc-analytics-dv-rg/providers/Microsoft.DataFactory/factories/sc-analytics-dv-dfact/integrationruntimes/sc-analytics-dv-IR-SHIR",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
